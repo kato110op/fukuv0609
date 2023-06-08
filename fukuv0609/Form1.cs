@@ -4,6 +4,7 @@ namespace fukuv0609
     {
         int vx = -5;
         int vy = -5;
+        int iTmer = 0;
         string chr = "walota";
         public Form1()
         {
@@ -18,6 +19,8 @@ namespace fukuv0609
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            iTmer = (iTmer) + 1;
+            label3.Text = $"iTimer{iTmer}";
             label1.Left += vx;
             label1.Top += vy;
             if (label1.Left < 0)
@@ -40,7 +43,7 @@ namespace fukuv0609
                 vy = -Math.Abs(vy + (vy / 10));
                 vy = vy - (vy / 10);
             }
-         
+
             // 変数mposを宣言して、マウスのフォーム座標を取り出す
             //// 1. MousePositionにマウス座標のスクリーン左上からのX、Yが入っている
             //label1.Text = $"{MousePosition.X},{MousePosition.Y}";
@@ -64,7 +67,12 @@ namespace fukuv0609
             }
         }
 
-    private void label2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
