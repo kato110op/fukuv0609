@@ -4,6 +4,7 @@ namespace fukuv0609
     {
         int vx = -5;
         int vy = -5;
+        string chr = "walota";
         public Form1()
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace fukuv0609
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
-            label1.Top  += vy;
+            label1.Top += vy;
             if (label1.Left < 0)
             {
                 vx = Math.Abs(vx + (vx / 10));
@@ -39,7 +40,11 @@ namespace fukuv0609
                 vy = -Math.Abs(vy + (vy / 10));
                 vy = vy - (vy / 10);
             }
-
+            string t = label1.Text;
+            label1.Text = chr;
+            chr = t;
+            {
+            }
         }
     }
 }
